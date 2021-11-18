@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hyperz_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hyperz.HomeFragment"
+        android:label="@string/homeFragment_label"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.hyperz.CategoryFragment"
+        android:label="@string/categoryFragment_label"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.hyperz.AccountFragment"
+        android:label="@string/accountFragment_label"
+        tools:layout="@layout/fragment_account" />
+</navigation>

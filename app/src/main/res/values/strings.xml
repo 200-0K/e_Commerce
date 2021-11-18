@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HyperZ</string>
+
+    <string name="homeFragment_label">Home</string>
+    <string name="categoryFragment_label">Categories</string>
+    <string name="accountFragment_label">My Account</string>
+
+</resources>
