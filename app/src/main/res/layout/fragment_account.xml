@@ -4,16 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:rotationX="3"
     tools:context=".AccountFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment 3"
-        android:textSize="25sp"
+    <Button
+        android:id="@+id/Loginbutton"
+        android:layout_width="236dp"
+        android:layout_height="51dp"
+        android:text="login"
+        android:textColor="#090000"
+        android:textColorHighlight="#0C0000"
+        android:textColorHint="#060900"
+        android:textColorLink="#090000"
+        android:textSize="20sp"
+        app:backgroundTint="#F6F2F2"
+        app:iconTint="#E60C0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544"
+        app:rippleColor="#0E0000"
+        app:strokeColor="#0E0202" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="243dp"
+        android:layout_height="75dp"
+        android:text="@string/login"
+        android:textColor="#070000"
+        android:textColorLink="#130101"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="242dp"
+        android:layout_height="44dp"
+        android:drawableEnd="@drawable/ic_person"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="240dp"
+        android:layout_height="44dp"
+        android:drawableEnd="@android:drawable/ic_lock_idle_lock"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
