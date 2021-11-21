@@ -6,14 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment 1"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/cart"
+            android:layout_width="48dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_cart" />
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="338dp"
+            android:layout_height="44dp"
+            android:drawableEnd="?android:attr/actionModeWebSearchDrawable"
+            android:ems="10"
+            android:hint="search"
+            android:inputType="textPersonName" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
