@@ -4,5 +4,7 @@
     <string name="homeFragment_label">Home</string>
     <string name="categoryFragment_label">Categories</string>
     <string name="accountFragment_label">My Account</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
 
 </resources>
