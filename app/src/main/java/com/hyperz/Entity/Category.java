@@ -1,4 +1,4 @@
-package com.hyperz.entity;
+package com.hyperz.Entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;

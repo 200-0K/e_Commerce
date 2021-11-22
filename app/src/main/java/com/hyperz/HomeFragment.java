@@ -17,8 +17,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.hyperz.Component.ProductCardView;
+import com.hyperz.Entity.Product;
 import com.hyperz.ViewModel.ProductViewModel;
-import com.hyperz.entity.Product;
 
 public class HomeFragment extends Fragment {
     private ProductViewModel productViewModel;

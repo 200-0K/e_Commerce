@@ -15,9 +15,9 @@ import androidx.navigation.Navigation;
 
 import com.hyperz.Component.CategoryTextView;
 import com.hyperz.Database.AppDatabase;
+import com.hyperz.Entity.Category;
 import com.hyperz.ViewModel.CategoryViewModel;
 import com.hyperz.ViewModel.ProductViewModel;
-import com.hyperz.entity.Category;
 
 public class CategoryFragment extends Fragment {
     private CategoryViewModel categoryViewModel;

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.FrameLayout;
-import androidx.gridlayout.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.gridlayout.widget.GridLayout;
 
-import com.hyperz.entity.Product;
+import com.hyperz.Entity.Product;
 import com.squareup.picasso.Picasso;
 
 public class ProductCardView extends CardView {
