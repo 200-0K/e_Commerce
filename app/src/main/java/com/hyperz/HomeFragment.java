@@ -1,5 +1,6 @@
 package com.hyperz;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,8 +18,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.hyperz.Component.ProductCardView;
+import com.hyperz.DAO.ProductDao;
+import com.hyperz.Database.AppDatabase;
 import com.hyperz.Entity.Product;
 import com.hyperz.ViewModel.ProductViewModel;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     private ProductViewModel productViewModel;
@@ -53,8 +58,7 @@ public class HomeFragment extends Fragment {
 
         uiCart.setOnClickListener(this::cartClicked);
 
-        //TODO: Handle search
-//        uiSearch.addTextChangedListener(new searchChanged());
+        uiSearch.addTextChangedListener(new searchChanged());
     }
 
     public void cartClicked(View view) {
@@ -68,18 +72,15 @@ public class HomeFragment extends Fragment {
 
     class searchChanged implements TextWatcher {
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
         @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
+        public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
         @Override
         public void afterTextChanged(Editable s) {
-
+            AsyncTask.execute(() -> {
+                productViewModel.search(s.toString());
+            });
         }
     }
 }
