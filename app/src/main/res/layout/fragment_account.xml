@@ -9,25 +9,34 @@
 
 
     <LinearLayout
-        android:layout_width="306dp"
-        android:layout_height="345dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534">
+        app:layout_constraintTop_toTopOf="parent">
 
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_horizontal"
+            android:text="@string/login"
+            android:textColor="@color/black"
+            android:textSize="45dp" />
 
         <EditText
             android:id="@+id/usernameText"
             android:layout_width="245dp"
             android:layout_height="44dp"
-            android:drawableEnd="@drawable/ic_person"
+            android:drawableEnd="@drawable/ic_male"
             android:ems="10"
             android:hint="username"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:textSize="20dp"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -35,10 +44,10 @@
             android:id="@+id/passwordText"
             android:layout_width="245dp"
             android:layout_height="58dp"
-            android:drawableEnd="@android:drawable/ic_lock_idle_lock"
+            android:drawableEnd="@drawable/ic_carbon_password"
             android:ems="10"
             android:hint="password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +61,7 @@
             android:id="@+id/Loginbutton"
             android:layout_width="202dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="login"
             android:textColor="#090000"
             android:textColorHighlight="#0C0000"
@@ -64,20 +74,5 @@
             app:rippleColor="#0E0000"
             app:strokeColor="#0E0202" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="224dp"
-        android:layout_height="69dp"
-        android:text="@string/login"
-        android:textColor="#070000"
-        android:textColorLink="#130101"
-        android:textSize="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
