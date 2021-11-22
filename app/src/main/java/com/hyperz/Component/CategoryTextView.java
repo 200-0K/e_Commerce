@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.hyperz.entity.Category;
+import com.hyperz.Entity.Category;
 
 public class CategoryTextView extends AppCompatTextView {
     private Category category;

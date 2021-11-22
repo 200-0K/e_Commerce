@@ -8,8 +8,8 @@ import androidx.room.RoomDatabase;
 
 import com.hyperz.DAO.CategoryDao;
 import com.hyperz.DAO.ProductDao;
-import com.hyperz.entity.Category;
-import com.hyperz.entity.Product;
+import com.hyperz.Entity.Category;
+import com.hyperz.Entity.Product;
 
 @Database(entities = {Product.class, Category.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {

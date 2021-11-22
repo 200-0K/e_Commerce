@@ -1,7 +1,6 @@
-package com.hyperz.entity;
+package com.hyperz.Entity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;

@@ -3,7 +3,7 @@ package com.hyperz.DAO;
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import com.hyperz.entity.Category;
+import com.hyperz.Entity.Category;
 
 import java.util.List;
 

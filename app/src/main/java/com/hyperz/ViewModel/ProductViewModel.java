@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.hyperz.entity.Product;
+import com.hyperz.Entity.Product;
 
 import java.util.List;
 
