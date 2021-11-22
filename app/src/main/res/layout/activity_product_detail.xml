@@ -6,4 +6,159 @@
     android:layout_height="match_parent"
     tools:context=".ProductDetail">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:drawableTop="@drawable/ic_star"
+                android:gravity="center"
+                android:text="4.6" />
+
+            <TextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18dp"
+                android:autoSizeMinTextSize="12dp"
+                android:autoSizeTextType="uniform"
+                android:maxHeight="40dp"
+                android:text="iPhone 12 Pro Max 128GB Pacific Blue 5G" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="SAR"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4,999"
+                    android:textColor="@color/black"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Descriptoin"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/product_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A14 bionic is the fastest chip in a smartphone with iOS 14.1, upgradable to iOS 14.2
+OLED delivers brighter brights, darker blacks and higher resolution for everything you look at
+Deep fusion, in mid to low light, analyses multiple exposures to maximise detail
+Has a display resolution of 2778x1284 with HDR
+Facetime is available on the product" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/add_to_cart_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_minus"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                />
+
+            <EditText
+                android:id="@+id/add_to_cart_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingLeft="3dp"
+                android:paddingTop="0dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/add_to_cart_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_plus"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_to_cart_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

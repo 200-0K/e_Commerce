@@ -18,12 +18,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.hyperz.Component.ProductCardView;
-import com.hyperz.DAO.ProductDao;
-import com.hyperz.Database.AppDatabase;
 import com.hyperz.Entity.Product;
 import com.hyperz.ViewModel.ProductViewModel;
-
-import java.util.List;
 
 public class HomeFragment extends Fragment {
     private ProductViewModel productViewModel;
@@ -58,7 +54,7 @@ public class HomeFragment extends Fragment {
 
         uiCart.setOnClickListener(this::cartClicked);
 
-        uiSearch.addTextChangedListener(new searchChanged());
+        uiSearch.addTextChangedListener(new SearchChanged());
     }
 
     public void cartClicked(View view) {
@@ -70,7 +66,7 @@ public class HomeFragment extends Fragment {
         Log.d("Product", "onViewCreated: " + ((ProductCardView) view).getProduct().id );
     }
 
-    class searchChanged implements TextWatcher {
+    class SearchChanged implements TextWatcher {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
         @Override
