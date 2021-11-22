@@ -1,6 +1,5 @@
 package com.hyperz;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.gridlayout.widget.GridLayout;
@@ -19,7 +17,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.hyperz.Component.ProductCardView;
-import com.hyperz.Database.AppDatabase;
 import com.hyperz.ViewModel.ProductViewModel;
 import com.hyperz.entity.Product;
 
@@ -29,7 +26,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+        productViewModel = new ViewModelProvider(requireActivity()).get(ProductViewModel.class);
     }
 
     @Override
@@ -40,13 +37,13 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        productViewModel = new ViewModelProvider(requireActivity()).get(ProductViewModel.class);
         GridLayout container = (GridLayout) getView().findViewById(R.id.productContainer);
         ImageButton uiCart = (ImageButton) getView().findViewById(R.id.cart);
         EditText uiSearch = (EditText) getView().findViewById(R.id.search);
 
-        productViewModel.getFilteredProducts().observe(getViewLifecycleOwner(), products -> {
+        productViewModel.getProducts().observe(getViewLifecycleOwner(), products -> {
             container.removeAllViews();
+            if (products == null) return;
             for(Product product : products) {
                 CardView card = new ProductCardView(getContext(), product);
                 card.setOnClickListener(this::productClicked);
@@ -58,11 +55,6 @@ public class HomeFragment extends Fragment {
 
         //TODO: Handle search
 //        uiSearch.addTextChangedListener(new searchChanged());
-
-        // Load all products
-        AsyncTask.execute(() -> {
-            productViewModel.updateProducts(AppDatabase.getInstance(getActivity().getApplicationContext()).productDao().getAll());
-        });
     }
 
     public void cartClicked(View view) {
