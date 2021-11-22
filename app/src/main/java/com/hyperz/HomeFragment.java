@@ -1,5 +1,6 @@
 package com.hyperz;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,12 +19,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.hyperz.Component.ProductCardView;
-import com.hyperz.DAO.ProductDao;
-import com.hyperz.Database.AppDatabase;
 import com.hyperz.Entity.Product;
 import com.hyperz.ViewModel.ProductViewModel;
-
-import java.util.List;
 
 public class HomeFragment extends Fragment {
     private ProductViewModel productViewModel;
@@ -58,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         uiCart.setOnClickListener(this::cartClicked);
 
-        uiSearch.addTextChangedListener(new searchChanged());
+        uiSearch.addTextChangedListener(new SearchChanged());
     }
 
     public void cartClicked(View view) {
@@ -66,11 +63,13 @@ public class HomeFragment extends Fragment {
     }
 
     public void productClicked(View view) {
-        //TODO: Forward to product details activity with product id
-        Log.d("Product", "onViewCreated: " + ((ProductCardView) view).getProduct().id );
+        Product product = ((ProductCardView) view).getProduct();
+        Intent intent = new Intent(getActivity(), ProductDetail.class);
+        intent.putExtra(Intent.EXTRA_REFERRER, product.id);
+        startActivity(intent);
     }
 
-    class searchChanged implements TextWatcher {
+    class SearchChanged implements TextWatcher {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
         @Override
