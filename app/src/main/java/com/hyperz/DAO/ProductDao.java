@@ -17,4 +17,7 @@ public interface ProductDao {
 
     @Query("SELECT * FROM Product WHERE id = :id LIMIT 1")
     Product getProductById(int id);
+
+    @Query("SELECT * FROM Product WHERE title LIKE '%'||:title||'%'")
+    List<Product> getProductByTitle(String title);
 }
