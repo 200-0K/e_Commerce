@@ -1,5 +1,6 @@
 package com.hyperz;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -62,8 +63,10 @@ public class HomeFragment extends Fragment {
     }
 
     public void productClicked(View view) {
-        //TODO: Forward to product details activity with product id
-        Log.d("Product", "onViewCreated: " + ((ProductCardView) view).getProduct().id );
+        Product product = ((ProductCardView) view).getProduct();
+        Intent intent = new Intent(getActivity(), ProductDetail.class);
+        intent.putExtra(Intent.EXTRA_REFERRER, product.id);
+        startActivity(intent);
     }
 
     class SearchChanged implements TextWatcher {
