@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class ProductDetail extends AppCompatActivity {
     private int productid;
-    private MutableLiveData<Product> productMutableLiveData = new MutableLiveData<>();
+    private final MutableLiveData<Product> productMutableLiveData = new MutableLiveData<>();
 
     private EditText uiQty;
 

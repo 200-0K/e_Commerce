@@ -2,6 +2,7 @@ package com.hyperz.Component;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -18,11 +19,11 @@ import com.hyperz.R;
 import com.squareup.picasso.Picasso;
 
 public class ProductCardView extends CardView {
-    private Product product;
+    private final Product product;
 
-    private ImageView uiImageView;
-    private TextView uiTitle;
-    private TextView uiPrice;
+    private final ImageView uiImageView;
+    private final TextView uiTitle;
+    private final TextView uiPrice;
 
     private final int nCardPerRow = 2;
 
@@ -35,7 +36,9 @@ public class ProductCardView extends CardView {
         this.setLayoutParams(cardParams);
         this.setContentPadding(15, 15, 15, 15);
         this.setClickable(true);
-        this.setForeground(context.obtainStyledAttributes(new int[]{android.R.attr.selectableItemBackground}).getDrawable(0)); // ripple effect on click
+        TypedArray styledAttributes = context.obtainStyledAttributes(new int[]{android.R.attr.selectableItemBackground});
+        this.setForeground(styledAttributes.getDrawable(0)); // ripple effect on click
+        styledAttributes.recycle();
 
         int hrPadding = this.getContentPaddingLeft() + this.getContentPaddingRight();
         int hrMargin = cardParams.leftMargin + cardParams.rightMargin;
