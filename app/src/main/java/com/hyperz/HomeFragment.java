@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +55,8 @@ public class HomeFragment extends Fragment {
         uiCart.setOnClickListener(this::cartClicked);
 
         uiSearch.addTextChangedListener(new SearchChanged());
+
+        productViewModel.showCurrentProducts();
     }
 
     public void cartClicked(View view) {
