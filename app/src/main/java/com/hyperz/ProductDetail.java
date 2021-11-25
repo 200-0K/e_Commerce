@@ -14,11 +14,12 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.hyperz.Database.AppDatabase;
 import com.hyperz.Entity.Product;
+import com.hyperz.Helper.Text;
 import com.squareup.picasso.Picasso;
 
 public class ProductDetail extends AppCompatActivity {
     private int productid;
-    private MutableLiveData<Product> productMutableLiveData = new MutableLiveData<>();
+    private final MutableLiveData<Product> productMutableLiveData = new MutableLiveData<>();
 
     private EditText uiQty;
 
@@ -61,7 +62,7 @@ public class ProductDetail extends AppCompatActivity {
         title.setText(product.title);
 
         TextView price = findViewById(R.id.product_price);
-        price.setText(String.format("%,.2f", product.price));
+        price.setText(Text.formatPrice(product.price));
 
         TextView description = findViewById(R.id.product_description);
         description.setText(product.description);

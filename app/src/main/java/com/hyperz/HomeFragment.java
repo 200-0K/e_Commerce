@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +38,9 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        GridLayout container = (GridLayout) getView().findViewById(R.id.productContainer);
-        ImageButton uiCart = (ImageButton) getView().findViewById(R.id.cart);
-        EditText uiSearch = (EditText) getView().findViewById(R.id.search);
+        GridLayout container = getView().findViewById(R.id.productContainer);
+        ImageButton uiCart = getView().findViewById(R.id.cart);
+        EditText uiSearch = getView().findViewById(R.id.search);
 
         productViewModel.getProducts().observe(getViewLifecycleOwner(), products -> {
             container.removeAllViews();
@@ -56,6 +55,8 @@ public class HomeFragment extends Fragment {
         uiCart.setOnClickListener(this::cartClicked);
 
         uiSearch.addTextChangedListener(new SearchChanged());
+
+        productViewModel.showCurrentProducts();
     }
 
     public void cartClicked(View view) {

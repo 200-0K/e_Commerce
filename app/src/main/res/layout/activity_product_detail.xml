@@ -6,104 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".ProductDetail">
 
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="product image" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
         android:orientation="vertical"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/product_image"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:scaleType="fitCenter"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toBottomOf="@+id/product_image">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:paddingHorizontal="20dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/rate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:drawableTop="@drawable/ic_star"
-                    android:gravity="center"
-                    android:text="x.x" />
-
-                <TextView
-                    android:id="@+id/product_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:autoSizeMinTextSize="12dp"
-                    android:autoSizeTextType="uniform"
-                    android:maxHeight="40dp"
-                    android:text="xxxxxxxxx"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginRight="10dp"
+                android:drawableTop="@drawable/ic_star"
+                android:gravity="center"
+                android:text="x.x" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="SAR"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
+            <TextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autoSizeMinTextSize="12dp"
+                android:autoSizeTextType="uniform"
+                android:maxHeight="40dp"
+                android:text="xxxxxxxxx"
+                android:textSize="18dp" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/product_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="xxxx"
-                    android:textColor="@color/black"
-                    android:textSize="35dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="Descriptoin"
-                android:textAllCaps="true"
+                android:layout_marginRight="5dp"
+                android:text="SAR"
                 android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xxxx"
+                android:textColor="@color/black"
+                android:textSize="35dp"
                 android:textStyle="bold" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/product_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="xxxxxxxxxxxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxx x" />
-            </ScrollView>
-
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Descriptoin"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/product_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xxxxxxxxxxxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxx x" />
+        </ScrollView>
 
     </LinearLayout>
 
@@ -114,7 +109,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,7 +125,9 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:onClick="minus"
-                app:srcCompat="@drawable/ic_minus" />
+                app:srcCompat="@drawable/ic_minus"
+                android:contentDescription="remove from cart"
+                android:focusable="true" />
 
             <EditText
                 android:id="@+id/add_to_cart_qty"
@@ -142,8 +140,7 @@
                 android:paddingTop="0dp"
                 android:paddingRight="3dp"
                 android:paddingBottom="8dp"
-                android:text="1"
-                />
+                android:text="1" />
 
             <ImageView
                 android:id="@+id/add_to_cart_plus"
@@ -153,7 +150,9 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:onClick="plus"
-                app:srcCompat="@drawable/ic_plus" />
+                app:srcCompat="@drawable/ic_plus"
+                android:contentDescription="add to cart"
+                android:focusable="true" />
 
         </LinearLayout>
 

@@ -23,7 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_mdi_light_cart" />
+                android:src="@drawable/ic_mdi_light_cart"
+                android:contentDescription="cart" />
 
             <EditText
                 android:id="@+id/search"
@@ -45,9 +46,11 @@
                 android:id="@+id/productContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                app:columnCount="2"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="0dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:columnCount="2">
 
                 <!--<androidx.cardview.widget.CardView
                     style="@style/ProductCardView">

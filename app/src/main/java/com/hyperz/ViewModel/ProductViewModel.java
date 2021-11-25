@@ -15,11 +15,15 @@ public class ProductViewModel extends ViewModel {
 
     public void updateProducts(List<Product> products) {
         this.products = products;
-        liveProducts.postValue(products);
+        showCurrentProducts();
     }
 
     public LiveData<List<Product>> getProducts() {
         return liveProducts;
+    }
+
+    public void showCurrentProducts() {
+        liveProducts.postValue(products);
     }
 
     public void search(String str) {

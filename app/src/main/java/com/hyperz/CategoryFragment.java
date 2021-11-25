@@ -39,7 +39,7 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LinearLayout container = (LinearLayout) getView().findViewById(R.id.category_container);
+        LinearLayout container = getView().findViewById(R.id.category_container);
 
         categoryViewModel.getCategories().observe(getViewLifecycleOwner(), categories -> {
             container.removeAllViews();
