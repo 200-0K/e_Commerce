@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="product image" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -124,7 +125,9 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:onClick="minus"
-                app:srcCompat="@drawable/ic_minus" />
+                app:srcCompat="@drawable/ic_minus"
+                android:contentDescription="remove from cart"
+                android:focusable="true" />
 
             <EditText
                 android:id="@+id/add_to_cart_qty"
@@ -147,7 +150,9 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:onClick="plus"
-                app:srcCompat="@drawable/ic_plus" />
+                app:srcCompat="@drawable/ic_plus"
+                android:contentDescription="add to cart"
+                android:focusable="true" />
 
         </LinearLayout>
 

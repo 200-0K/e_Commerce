@@ -23,7 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_mdi_light_cart" />
+                android:src="@drawable/ic_mdi_light_cart"
+                android:contentDescription="cart" />
 
             <EditText
                 android:id="@+id/search"

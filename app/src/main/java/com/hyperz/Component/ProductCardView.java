@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.gridlayout.widget.GridLayout;
 
 import com.hyperz.Entity.Product;
+import com.hyperz.Helper.Text;
 import com.hyperz.R;
 import com.squareup.picasso.Picasso;
 
@@ -55,7 +56,7 @@ public class ProductCardView extends CardView {
     public void updateCard(Product p) {
         Picasso.get().load(p.image).into(uiImageView);
         uiTitle.setText(p.title);
-        uiPrice.setText("SAR " + p.price);
+        uiPrice.setText( "SAR ".concat(Text.formatPrice(p.price)) );
     }
 
     public Product getProduct() {
