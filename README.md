@@ -1,5 +1,5 @@
 # HyperZ
-The APK can be downloaded from the [release](https://github.com/200-0K/e_Commerce/releases) page.
+The APK can be downloaded from the [release](https://github.com/200-0K/e_Commerce/releases/latest) page.
 
 ## Requirements
 ### Software
